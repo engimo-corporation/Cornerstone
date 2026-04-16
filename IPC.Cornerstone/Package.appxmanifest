@@ -10,14 +10,14 @@
 
   <Identity
     Name="3561aadc-ae08-4c07-ba10-1e83e8dfd90c"
-    Publisher="CN=QuentinSmith"
-    Version="1.0.0.0" />
+    Publisher="CN=Interastral-Peace-Corporation"
+    Version="0.0.0.1" />
 
   <mp:PhoneIdentity PhoneProductId="3561aadc-ae08-4c07-ba10-1e83e8dfd90c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>IPC.Cornerstone</DisplayName>
-    <PublisherDisplayName>QuentinSmith</PublisherDisplayName>
+    <PublisherDisplayName>Interastral Peace Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -48,6 +48,5 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
-    <systemai:Capability Name="systemAIModels"/>
   </Capabilities>
 </Package>
