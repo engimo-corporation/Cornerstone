@@ -51,26 +51,6 @@ namespace IPC.Cornerstone
                 // Now we yield the message safely outside the try-catch block
                 yield return statusMessage;
             }
-        }
-
-        public static IEnumerable<string> EvictWebHogs()
-        {
-            // Targeting WebView2 instances linked to Shell components
-            var targets = Process.GetProcessesByName("msedgewebview2");
-            foreach (var proc in targets)
-            {
-                try
-                {
-                    // IPC Logic: Only kill if it's not a user-opened browser tab
-                    // We'll look for shell-integrated command line arguments here in the future
-                    proc.Kill();
-                    yield return $"EVICTED: WebView2 Instance (PID: {proc.Id}) terminated.";
-                }
-                catch
-                {
-                    yield return $"SKIPPED: WebView2 Instance (PID: {proc.Id}) in use by protected process.";
-                }
-            }
-        }
+       
     }
 }
