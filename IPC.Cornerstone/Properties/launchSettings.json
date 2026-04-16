@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IPC.Cornerstone (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "IPC.Cornerstone (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

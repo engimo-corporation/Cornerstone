@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="IPC.Cornerstone.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="IPC Cornerstone">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="2" BorderBrush="#B8860B" BorderThickness="1" IsHitTestVisible="False" Canvas.ZIndex="999"/>
+
+        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="40" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0">
+                <FontIcon Glyph="&#xE7E8;" Foreground="#B8860B" FontSize="14" Margin="0,0,12,0"/>
+                <TextBlock Text="IPC CORNERSTONE" FontSize="12" FontWeight="SemiBold" Foreground="#B8860B" CharacterSpacing="100"/>
+                <TextBlock Text="// PROTOCOL: PRESERVATION" FontSize="10" Foreground="#888888" Margin="12,1,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Margin="0,40,0,40">
+                <TextBlock x:Name="StatusText" Text="SYSTEM INTEGRITY: PENDING" Foreground="#888888" HorizontalAlignment="Center" Margin="0,0,0,24" FontSize="14" CharacterSpacing="50"/>
+                <Button x:Name="PreservationButton" 
+                Content="INITIATE PRESERVATION PROTOCOL" 
+                Click="PreservationButton_Click"
+                Width="300" Height="50" 
+                Background="Transparent" 
+                BorderBrush="#B8860B" 
+                BorderThickness="1" 
+                Foreground="#B8860B"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <Border Grid.Row="1" BorderBrush="#333333" BorderThickness="1" Background="#111111" Opacity="0.8" CornerRadius="4">
+                <ListView x:Name="LogView" Padding="12" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="Cascadia Code, Consolas" FontSize="11" Foreground="#AAAAAA" Margin="0,2"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
